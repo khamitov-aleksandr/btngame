@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/styles.css">
-	<title>Buttons game</title>
-</head>
-<body>
-	<h1 class="type-of-game">🖱️&nbsp;Buttons game</h1>
-	<h2 class="name-of-game">"Stroop effect"</h2>
-	<h3 id="task" class="game-task1">Click on the button with the text "red"</h3>
-	<div id="text" class="game-conteiner">
-		<button class="blue-button" onclick="chpok('text')">Red</button>
-		<button class="red-button" onclick="chpok2('text')">Blue</button>
-		<button class="green-button" onclick="chpok2('text')">Green</button>
-	</div>
-	  <script src="js/index.js" charset="utf-8"></script>
-  <footer>
-    <p>Made with ❤️</p>
-    <p>Created by Aleksandr Khamitov</p>
-  </footer>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="icon" type="text/css" href="css/favicon.ico?v=2">
+		<title>Buttons game</title>
+	</head>
+	<body>
+		
+		<div class="wrapper">
+		<div class="content">
+			<h2 class="name-of-game"><a class="link" href="index.html">Stroop effect game</a></h2>
+			<p class="description">Click on the button according to the task (text/color)</p>
+			<p class="p-counter"></p>
+			<p class="p-timer"></p>
+			<h3 class="game-task hide">Click on the button with<br><span>text</span> <em>Red</em></h3>
+			<p class="game-response hide"></p>
+			<div class="game-container">
+				<button class="btn start-button">Start</button>
+				<button class="btn color-button hide">Red</button>
+				<button class="btn color-button hide">Blue</button>
+				<button class="btn color-button hide">Green</button>
+				<button class="btn start-again-button hide">Start again</button>
+				<p class="link-description"><a class="link" href="https://en.wikipedia.org/wiki/Stroop_effect" target="_blank">What is Stroop Effect</a></p>
+			</div>
+		</div>
+		<footer>
+			<p>Made with ❤️</p>
+			<p>Created by Aleksandr Khamitov</p>
+		</footer>
+		</div>
+	  	<script src="js/index.js" charset="utf-8"></script>
+	</body>
 </html>
