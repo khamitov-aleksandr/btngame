@@ -1,4 +1,4 @@
-# Stroof Effect Game
+# Stroop Effect Game
 
 
 Vanilia Javascript 

@@ -1,6 +1,7 @@
-body{
+body {
   background-color: whitesmoke;
   text-align: center;
+  font-family: Georgia, sans-serif;
 }
 
 a {
@@ -19,29 +20,25 @@ a {
 }
 
 .game-conteiner {
-	text-align: center;
+  text-align: center;
 }
 
 .game-task {
-	text-align: center;
+  text-align: center;
 	font-size: 32px;
-	font-family: Georgia;
 }
 
 .game-response {
   text-align: center;
   font-size: 25px;
-  font-family: Georgia;
 }
 
 .description {
-  font-family: Georgia;
   font-size: 25px;
   margin-bottom: -5px;
 }
 
 .link-description {
-  font-family: Georgia;
   font-style: italic;
   font-size: 20px;
   margin-top: 50px;
@@ -80,9 +77,9 @@ a {
 }
 
 .btn {
+  font-family: Georgia;
   outline: none;
   border: 4px solid grey;
-  font-family: 'Georgia', sans-serif;
   line-height: 2;
   font-weight: 900;
   border-radius: 15px;
@@ -90,8 +87,6 @@ a {
   text-align: center;
   background-color: white;
   cursor: pointer;
-  
-  
 }
 
 .btn:hover {
@@ -101,7 +96,7 @@ a {
   text-shadow: 2px 0 #DBEDF3;
 }
 /********************* FOOTER ****************/
-footer {
+.footer {
   font-family: sans-serif;
   position: absolute;
   bottom: 0;
@@ -109,8 +104,8 @@ footer {
   height: 5rem;
 }
 
- footer p { 
-	text-align: center;
+.footer-description { 
+  text-align: center;
 }
 
 /********************* HIDE ****************/
@@ -119,7 +114,7 @@ footer {
 }
 
 /**** Name of Buttons with first-letter uppercase ****/
-button::first-letter {
+.game-container button::first-letter {
   text-transform:capitalize;
 } 
 
@@ -234,5 +229,4 @@ button::first-letter {
   margin-top: 5px;
   font-size: 20px;
 }
-
 }
