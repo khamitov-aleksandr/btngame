@@ -25,7 +25,8 @@ a {
 
 .game-task {
   text-align: center;
-	font-size: 32px;
+  font-size: 32px;
+  display: block;
 }
 
 .game-response {
@@ -33,7 +34,7 @@ a {
   font-size: 25px;
 }
 
-.description {
+.js-description {
   font-size: 25px;
   margin-bottom: -5px;
 }
@@ -43,17 +44,18 @@ a {
   font-size: 20px;
   margin-top: 50px;
   margin-bottom: 50px;
+  display: block;
 }
 
 /********************* BUTTONS ****************/
 .color-button {
   font-size: 3rem;
-  display: none;
   margin: 10px;
   margin-top: 0px;
   margin-bottom: 45px;
   max-width: 200px;
   width: 25%;
+  display: inline-block;
 }
 
 .start-again-button {
@@ -63,8 +65,8 @@ a {
   margin: 10px;
   margin-top: 0px;
   margin-bottom: 32px;
-  display: none;
   padding: 10px 15px 10px 15px;
+  display: inline-block;
 }
 
 .start-button {
@@ -111,6 +113,7 @@ a {
 /********************* HIDE ****************/
 .hide {
   visibility: hidden;
+  display: none;
 }
 
 /**** Name of Buttons with first-letter uppercase ****/
@@ -119,7 +122,7 @@ a {
 } 
 
 /********************* Counter ****************/
-.p-counter {
+.js-counter {
   font-family: Georgia;
   text-align: right;
   margin-right: 45px;
@@ -128,7 +131,7 @@ a {
   font-size: 25px;
 }
 
-.p-timer {
+.js-timer {
   font-family: Georgia;
   text-align: left;
   margin-left: 45px;
@@ -161,7 +164,7 @@ a {
   font-size: 20px;
 }
 
-.description {
+.js-description {
   font-size: 20px;
   margin: 10px;
 }
@@ -214,7 +217,7 @@ a {
   background-color: white;
 }
 /********************* Counter ****************/
-.p-counter {
+.js-counter {
   text-align: center;
   margin-right: 0px;
   margin-bottom: 0px;
@@ -222,7 +225,7 @@ a {
   font-size: 20px;
 }
 
-.p-timer {
+.js-timer {
   text-align: center;
   margin-left: 0px;
   margin-bottom: -10px;

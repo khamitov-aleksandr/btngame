@@ -1,29 +1,29 @@
 // Get point counter
-const counter = document.querySelector(".p-counter");
+const counter = document.querySelector(".js-counter");
 // Get text for timer
-const timer = document.querySelector(".p-timer");
+const timer = document.querySelector(".js-timer");
 const countDownTime = 20;  // Default countdown time
 let totalPoint = 0;
 let level = 1;
 let time = countDownTime;
 
 // Create const for instruction
-const instruction = document.getElementsByClassName("description")[0];
+const instruction = document.querySelector(".js-description");
 // Create const for buttons with class 'color-button'
 const optionButtons = document.querySelectorAll(".color-button");
 
 // Create array for task types
-coloursOrText = ['text', 'color'];
+let coloursOrText = ['text', 'color'];
 // Create array of colours
 const coloursAll = ["Red", "Blue", "Green", "Aqua", "Yellow", "Grey", "Brown", "Purple", "Pink", "Orange", "Black"];
 let coloursSelected = coloursAll.slice(0, 3);
 
 // Get the start button
-const start = document.getElementsByClassName("start-button")[0];
+const start = document.querySelector(".start-button");
 // Get the restart button
-const restart = document.getElementsByClassName("start-again-button")[0];
+const restart = document.querySelector(".start-again-button");
 // Get the link to wikipedia
-const link = document.getElementsByClassName("link-description")[0];
+const link = document.querySelector(".link-description");
 
 // Add event for for start button
 start.addEventListener("click", startFunction);
@@ -61,30 +61,28 @@ function setColors(){
     }
 }
 
-// crate a function for timer
+// create a function for timer
 function timerFunction() {
     let seconds = time;
     seconds = seconds < 10 ? "0" + seconds: seconds;
     timer.innerHTML = `${seconds} seconds`;
     if (time == 0) {
         clearInterval(myInterval);
-        restart.style.display = "inline-block";
         restart.classList.remove("hide");
         responseText.classList.remove("hide");
-        taskText.style.display = "none";
+        taskText.classList.add("hide");
         counter.classList.add("hide");
         timer.classList.add("hide");
         responseText.innerHTML = `Time is over! <br> Your point is: ${totalPoint}. <br><br> Do u wanna try again?`;
         for (let l = 0; l < optionButtons.length; l++){
             optionButtons[l].classList.add("hide");
-            optionButtons[l].style.display = "none";
         }
     }
     timer.style.color = (time <= 3) ? "red" : "black";
     time--;
 }
 
-taskText.style.display = "none";
+taskText.classList.add("hide");
 
 // create a function for start button
 function startFunction() {
@@ -94,30 +92,34 @@ function startFunction() {
     myInterval = setInterval (timerFunction, 1000);
     timerFunction();
     start.classList.add("hide");
-    link.style.display = "none";
-    start.style.display = "none";
-    taskText.style.display = "block";
+    link.classList.add("hide");
     taskText.classList.remove("hide");
     counter.classList.remove("hide");
     totalPoint = 0;
     counter.innerHTML = `Point: ${totalPoint}`;
     for (let l = 0; l < optionButtons.length; l++) {
         optionButtons[l].classList.remove("hide");
-        optionButtons[l].style.display = "inline-block";
     }
 }
-// create a function witch will check is event.target (text with color in task) == pressed button with color
+
+// create a function witch will check is event.target (text with color in task) === pressed button with color
+const isAnswerCorrect = (guessType, event) => {
+    return guessType === 'text' ?
+        event.target.innerHTML === taskColor.innerHTML:
+        event.target.style.color === taskColor.innerHTML.toLowerCase();
+}
+
+// create a function witch will check is answer is correct or not
 function checkColours() {
     // Answer is correct
-    if (((event.target.innerHTML == taskColor.innerHTML) && (taskDescription.innerHTML == 'text')) 
-        || ((event.target.style.color == taskColor.innerHTML.toLowerCase()) && (taskDescription.innerHTML == 'color')))
-    {
+    if (isAnswerCorrect(taskDescription.innerHTML, event)) {
         time = countDownTime - level * 2 < 3 ? 3 : countDownTime - level * 2;
         level += 1;
         totalPoint += 5;
         // Add one more color
-        if (level + 1 < coloursAll.length)
+        if (level + 1 < coloursAll.length) {
             coloursSelected.push(coloursAll[level + 1]);
+        }
         // Set text and colors
         setColors()
         counter.classList.remove("hide");
@@ -126,13 +128,12 @@ function checkColours() {
     else { // Answer is wrong
         clearInterval(myInterval);
         for (let v = 0; v < optionButtons.length; v++) {
-            optionButtons[v].style.display = "none";
+            optionButtons[v].classList.add("hide");
         }
-        restart.style.display = "inline-block";
         restart.classList.remove("hide");
         responseText.classList.remove("hide");
         responseText.innerHTML = `Not correct! <br> Your point is: ${totalPoint}. <br><br> Do u wanna try again?`;
-        taskText.style.display = "none";
+        taskText.classList.add("hide");
         counter.classList.add("hide");
         timer.classList.add("hide");
     }
@@ -141,8 +142,8 @@ function checkColours() {
 // crate a function for restart button
 function reset() {
     responseText.innerHTML = "";
-    taskText.style.display = "inline-block";
-    restart.style.display = "none";
+    taskText.classList.remove("hide");
+    restart.classList.remove("hide");
     totalPoint = 0;
     time = countDownTime;
     startFunction()
