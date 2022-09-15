@@ -1,122 +1,268 @@
-* {
-	background-color: lightgrey;
-}
-/********************* CLASS SELECTORS ****************/
-.type-of-game {
-	text-align: center;
-	font-size: 80px;
-	font-family: cursive;
-	margin-top: 80px;
-	margin-bottom: 20px;
+body {
+  background-color: whitesmoke;
+  text-align: center;
+  font-family: Georgia, sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/********************* CLASS SELECTORS ****************/
 .name-of-game {
   text-align: center;
   font-size: 60px;
   font-family: cursive;
-  margin-top: 10px;
-  margin-bottom: 50px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  text-shadow: 3px 0 #DA0463;
 }
 
 .game-conteiner {
-	text-align: center;
+  text-align: center;
 }
 
-.game-task1 {
-	text-align: center;
-	font-size: 50px;
-	font-family: sans-serif;
-	margin-bottom: 50px;
-}
-/********************* BUTTONS ****************/
-.blue-button {
-  -webkit-border-radius: 26;
-  -moz-border-radius: 26;
-  border-radius: 26px;
-  font-family: Georgia;
-  color: #ffffff;
-  font-size: 45px;
-  background: #3498db;
-  padding: 15px 25px 15px 25px;
-  text-decoration: none;
-  margin-left: 5px;
-  position: relative;
-  right: 50px;
-  
-}
-
-.blue-button:hover {
-  background: #3cb0fd;
-  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
-  text-decoration: none;
-}
-
-.red-button {
-  -webkit-border-radius: 26;
-  -moz-border-radius: 26;
-  border-radius: 26px;
-  font-family: Georgia;
-  color: #ffffff;
-  font-size: 45px;
-  background: #d93434;
-  padding: 15px 25px 15px 25px;
-  text-decoration: none;
-  margin-left: 5px;
-  position: relative;
-}
-
-.red-button:hover {
-  background: #fc3c3c;
-  text-decoration: none;
-}
-
-.green-button {
-  -webkit-border-radius: 26;
-  -moz-border-radius: 26;
-  border-radius: 26px;
-  font-family: Georgia;
-  color: #ffffff;
-  font-size: 45px;
-  background: #34d934;
-  padding: 15px 25px 15px 25px;
-  text-decoration: none;
-  margin-left: 5px;
-  position: relative;
-  left: 50px;
-}
-
-.green-button:hover {
-  background: #3cfa58;
-  text-decoration: none;
-}
-
-/********************* FOOTER ****************/
-
-footer {
-	margin-top: 50px;
-}
-
- p { 
- 	margin-top: 10px;
-	text-align: center;
-}
-
-.refButton {
-  -webkit-border-radius: 26;
-  -moz-border-radius: 26;
-  border-radius: 26px;
-  font-family: Georgia;
-  color: black;
-  font-size: 40px;
-  background: yellow;
-  padding: 15px 25px 15px 25px;
-  text-decoration: none;
+.game-task {
+  text-align: center;
+  font-size: 32px;
   display: block;
+}
+
+.game-response {
+  text-align: center;
+  font-size: 25px;
+}
+
+.js-description {
+  font-size: 25px;
+  margin-bottom: -5px;
+}
+
+.link-description {
+  font-style: italic;
+  font-size: 20px;
   margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto
+  margin-bottom: 50px;
+  display: block;
+}
+
+/********************* BUTTONS ****************/
+.color-button {
+  font-size: 3rem;
+  margin: 10px;
+  margin-top: 0px;
+  margin-bottom: 45px;
+  max-width: 200px;
+  width: 25%;
+  display: inline-block;
+}
+
+.start-again-button {
+  border: 4px solid #404B69;
+  font-size: 2rem;
+  color: #DA0463;
+  margin: 10px;
+  margin-top: 0px;
+  margin-bottom: 32px;
+  padding: 10px 15px 10px 15px;
+  display: inline-block;
+}
+
+.start-button {
+  color: black;
+  display: inline-block;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-size: 3rem;
+  width: 300px;
+}
+
+.btn {
+  font-family: Georgia;
+  outline: none;
+  border: 4px solid grey;
+  line-height: 2;
+  font-weight: 900;
+  border-radius: 15px;
+  min-height: 100px;
+  text-align: center;
+  background-color: white;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #EEEEEE;
+  border: 4px solid black;
+  cursor: pointer;
+  text-shadow: 2px 0 #DBEDF3;
+}
+/********************* FOOTER ****************/
+.footer {
+  font-family: sans-serif;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 5rem;
+}
+
+.footer-description {
+  text-align: center;
+}
+
+/********************* HIDE ****************/
+.hide {
+  visibility: hidden;
+  display: none;
+}
+
+/**** Name of Buttons with first-letter uppercase ****/
+.game-container button::first-letter {
+  text-transform:capitalize;
+}
+
+/********************* Counter ****************/
+.js-counter {
+  font-family: Georgia;
+  text-align: right;
+  margin-right: 45px;
+  margin-bottom: -10px;
+  margin-top: -19px;
+  font-size: 25px;
+}
+
+.js-timer {
+  font-family: Georgia;
+  text-align: left;
+  margin-left: 45px;
+  margin-bottom: -10px;
+  margin-top: -17px;
+  font-size: 25px;
+}
+
+.red {
+  color: red;
+}
+.blue {
+  color: blue;
+}
+.green {
+  color: green;
+}
+.aqua {
+  color: aqua;
+}
+.yellow {
+  color: yellow;
+}
+.grey {
+  color: grey;
+}
+.brown {
+  color: brown;
+}
+.purple {
+  color: purple;
+}
+.pink {
+  color: pink;
+}
+.orange {
+  color: orange;
+}
+.black {
+  color: black;
+}
+
+/************---------___________ Adaptability ___________---------************/
+@media screen and (max-height: 550px) {
+  footer {
+    position: static;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  /********************* CLASS SELECTORS ****************/
+.name-of-game {
+  font-size: 40px;
+  margin-top: 1%;
+  text-shadow: 3px 0 #DA0463;
+}
+
+.game-task {
+  font-size: 22px;
+}
+
+.game-response {
+  font-size: 20px;
+}
+
+.js-description {
+  font-size: 20px;
+  margin: 10px;
+}
+
+.link-description {
+  font-size: 20px;
+  margin-top: 50px;
+  margin-bottom: 80px;
+}
+
+/********************* BUTTONS ****************/
+.color-button {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  width: 80%;
+  max-width: 80%;
+}
+
+.start-again-button {
+  border: 2px solid #404B69;
+  margin-top: 50px;
+  margin-bottom: 38px;
+}
+
+.start-button {
+  margin-top: 90px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  border: 2px solid grey;
+  font-size: 2rem;
+  line-height: 2;
+  font-weight: 600;
+  border-radius: 12px;
+  min-width: 150px;
+  min-height: 60px;
+}
+
+ .btn:active {
+  background: #EEEEEE;
+  border: 4px solid black;
+  cursor: pointer;
+  text-shadow: 2px 0 #DBEDF3;
+ }
+
+ .btn:hover {
+  border: 2px solid grey;
+  text-shadow: none;
+  background-color: white;
+}
+/********************* Counter ****************/
+.js-counter {
+  text-align: center;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-top: -20px;
+  font-size: 20px;
+}
+
+.js-timer {
+  text-align: center;
+  margin-left: 0px;
+  margin-bottom: -10px;
+  margin-top: 5px;
+  font-size: 20px;
+}
 }
