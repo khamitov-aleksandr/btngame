@@ -106,7 +106,7 @@ a {
   height: 5rem;
 }
 
-.footer-description { 
+.footer-description {
   text-align: center;
 }
 
@@ -119,7 +119,7 @@ a {
 /**** Name of Buttons with first-letter uppercase ****/
 .game-container button::first-letter {
   text-transform:capitalize;
-} 
+}
 
 /********************* Counter ****************/
 .js-counter {
@@ -140,6 +140,39 @@ a {
   font-size: 25px;
 }
 
+.red {
+  color: red;
+}
+.blue {
+  color: blue;
+}
+.green {
+  color: green;
+}
+.aqua {
+  color: aqua;
+}
+.yellow {
+  color: yellow;
+}
+.grey {
+  color: grey;
+}
+.brown {
+  color: brown;
+}
+.purple {
+  color: purple;
+}
+.pink {
+  color: pink;
+}
+.orange {
+  color: orange;
+}
+.black {
+  color: black;
+}
 
 /************---------___________ Adaptability ___________---------************/
 @media screen and (max-height: 550px) {

@@ -15,7 +15,7 @@ const optionButtons = document.querySelectorAll(".color-button");
 // Create array for task types
 let coloursOrText = ['text', 'color'];
 // Create array of colours
-const coloursAll = ["Red", "Blue", "Green", "Aqua", "Yellow", "Grey", "Brown", "Purple", "Pink", "Orange", "Black"];
+const coloursAll = ["red", "blue", "green", "aqua", "yellow", "grey", "brown", "purple", "pink", "orange", "black"];
 let coloursSelected = coloursAll.slice(0, 3);
 
 // Get the start button
@@ -51,11 +51,12 @@ function setColors(){
     // shiuffle (sort) text of colours and colours 
     let shuffledColoursTexts = colours.slice();
     let shuffledColours = colours.sort(() => Math.random() - 0.5).slice();
-    for (let n = 0; n < colours.length; n++) {
+    for (let n = 0; n < optionButtons.length; n++) {
         // change the text inside of buttons
         optionButtons[n].innerHTML = shuffledColoursTexts[n];
         // change  style colours for the text inside of buttons
-        optionButtons[n].style.color = shuffledColours[n];
+        optionButtons[n].classList.remove(...coloursSelected);
+        optionButtons[n].classList.add(shuffledColours[n]);
         // add events for each colorful bottons
         optionButtons[n].addEventListener("click", checkColours);
     }
@@ -78,7 +79,7 @@ function timerFunction() {
             optionButtons[l].classList.add("hide");
         }
     }
-    timer.style.color = (time <= 3) ? "red" : "black";
+    timer.classList.toggle("red", time <= 3 );
     time--;
 }
 
@@ -106,7 +107,8 @@ function startFunction() {
 const isAnswerCorrect = (guessType, event) => {
     return guessType === 'text' ?
         event.target.innerHTML === taskColor.innerHTML:
-        event.target.style.color === taskColor.innerHTML.toLowerCase();
+        event.target.classList.contains(taskColor.innerHTML.toLowerCase())
+
 }
 
 // create a function witch will check is answer is correct or not
@@ -121,7 +123,7 @@ function checkColours() {
             coloursSelected.push(coloursAll[level + 1]);
         }
         // Set text and colors
-        setColors()
+        setColors();
         counter.classList.remove("hide");
         counter.innerHTML = `Point: ${totalPoint}`;
     } 
