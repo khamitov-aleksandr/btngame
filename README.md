@@ -1,5 +1,5 @@
 # Stroop Effect Game
 
 
-Vanilia Javascript 
-HTML and CSS without any library such as Bootstrap
+Vanilia JavaScript 
+HTML and CSS without any library such as Bootstrap and e.t.c.
